@@ -31,6 +31,11 @@ app.use(express.urlencoded());
 app.use("/api/v1/emp", empRouter);
 app.use("/api/v1/user", userRouter);
 
+// root route
+app.route("/").get((req, res) => {
+  res.send("<h1>Welcome to Assignment 1</h1>");
+});
+
 // listen to port
 app.listen(PORT, () => {
   console.log(`listening to port ${PORT}`);
